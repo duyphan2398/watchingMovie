@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-	<!-- Meta Tags -->
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<!-- CSS -->
-	<link type="text/css" media="all" href="./css/autoptimize_9d0e530217008b35a0953a4ba9883915.css" rel="stylesheet" />
-	<!-- Title-Logo -->
-	<title>Phim Online</title>
-	<link rel="icon" href="./css/images/tpd-b-24px.png" type="image/x-icon" />	
-	<link rel='stylesheet' id='dp-fonts-css'  href='./css/font/font.css' type='text/css' media='all' />
-	<!-- Scipt -->
-	<script type='text/javascript' src='./js/jquery.js'></script>
-	<script type='text/javascript' src='./js/jquery-migrate.min.js'></script>
-	<script type='text/javascript' src='./js/modernizr.min.js'></script>
-	<script type='text/javascript' src='./js/jquery.plugins.min.js'></script>
-	<script type='text/javascript' src='./js/jwplayer.js'></script>
-	<script type='text/javascript' src='./js/jquery.fitvids.js'></script>
-	<script type='text/javascript' src='./js/theme.js'></script>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!-- CSS -->
+    <link type="text/css" media="all" href="./css/autoptimize_9d0e530217008b35a0953a4ba9883915.css" rel="stylesheet" />
+    <!-- Title-Logo -->
+    <title>Phim Online</title>
+    <link rel="icon" href="./css/images/tpd-b-24px.png" type="image/x-icon" />
+    <link rel='stylesheet' id='dp-fonts-css' href='./css/font/font.css' type='text/css' media='all' />
+    <!-- Scipt -->
+    <script type='text/javascript' src='./js/jquery.js'></script>
+    <script type='text/javascript' src='./js/jquery-migrate.min.js'></script>
+    <script type='text/javascript' src='./js/modernizr.min.js'></script>
+    <script type='text/javascript' src='./js/jquery.plugins.min.js'></script>
+    <script type='text/javascript' src='./js/jwplayer.js'></script>
+    <script type='text/javascript' src='./js/jquery.fitvids.js'></script>
+    <script type='text/javascript' src='./js/theme.js'></script>
 </head>
 
 
 <body class="boxed-wrap customize-support ">
-	
-	
-<div id="page">
-	<!-- Header -->
-	<?php 
+
+
+    <div id="page">
+        <!-- Header -->
+        <?php 
 		include("header.php");
 	?>
-	
 
-	<!-- Thanh menu -->
-	<?php 
+
+        <!-- Thanh menu -->
+        <?php 
 		include("nav.php");
 	?>
 
 
 
-	<!-- Content -->
-	<main>
-		<div id="main" class="full-width"><div class="wrap cf">
-			<div id="content" role="main">					
-				<div class="loop-content switchable-view grid-medium" data-view="grid-medium">
-					<div class="nag cf">
-						<!--  Xử lý LOad phim -->
-						<?php 
+        <!-- Content -->
+        <main>
+            <div id="main" class="full-width">
+                <div class="wrap cf">
+                    <div id="content" role="main">
+                        <div class="loop-content switchable-view grid-medium" data-view="grid-medium">
+                            <div class="nag cf">
+                                <!--  Xử lý Load phim -->
+                                <?php 
 							require_once('connect.php');
 							// Tìm tổng số dòng dữ liệu 
 							$res= mysqli_query($connection, 'SELECT count(id_phim) AS total FROM phim');	
@@ -70,31 +72,34 @@
    							//Duyệt dữ liệu
     						while($row = $result ->fetch_assoc()){
 						 ?>
-						<div style="position: relative"  class="item cf item-video">
-							<div class="thumb">
-								<a class="clip-link" title="<?=$row["ten_phim"]?>" href="./watchingMovie.php?id_phim=<?=$row['id_phim']?>">
-									<span class="clip">
-										<img src=".<?=$row["anh_phim"]?>" alt="<?=$row["ten_phim"]?>" /><span class="vertical-align"></span>
-										
-									</span>		
-									<span class="overlay"></span>
-								</a>
-							</div>
+                                <div style="position: relative" class="item cf item-video">
+                                    <div class="thumb">
+                                        <a class="clip-link" title="<?=$row["ten_phim"]?>"
+                                            href="./watchingMovie.php?id_phim=<?=$row['id_phim']?>">
+                                            <span class="clip">
+                                                <img src=".<?=$row["anh_phim"]?>" alt="<?=$row["ten_phim"]?>" /><span
+                                                    class="vertical-align"></span>
 
-							<div class="data">
-								<h2 class="entry-title"><a href=".<?=$row["url_phim"]?>" rel="bookmark" title="<?=$row["ten_phim"]?>"><?= $row["ten_phim"] ?></a></h2>
-							</div>
-						</div>
-						<?php 
+                                            </span>
+                                            <span class="overlay"></span>
+                                        </a>
+                                    </div>
+
+                                    <div class="data">
+                                        <h2 class="entry-title"><a href=".<?=$row["url_phim"]?>" rel="bookmark"
+                                                title="<?=$row["ten_phim"]?>"><?= $row["ten_phim"] ?></a></h2>
+                                    </div>
+                                </div>
+                                <?php 
 							} 
-						?>	
-					<!-- End Xử lý LOad phim -->
-					</div>
-					
-					<!-- Phân Trang -->
-					<div class="loop-nav pag-nav">
-						<div class="loop-nav-inner">
-							<?php 
+						?>
+                                <!-- End Xử lý Load phim -->
+                            </div>
+
+                            <!-- Phân Trang -->
+                            <div class="loop-nav pag-nav">
+                                <div class="loop-nav-inner">
+                                    <?php 
            						 // PHẦN HIỂN THỊ PHÂN TRANG
             					// nếu current_page > 1 và total_page > 1 mới hiển thị nút Quay Lại
             					if ($current_page > 1 && $total_page > 1){
@@ -125,18 +130,19 @@
             					}
 
           					?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-	
-	<!-- </footer>  -->
-	<?php 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <!-- </footer>  -->
+        <?php 
 		include("footer.php");
 	?>
 
-</div>
+    </div>
 </body>
+
 </html>
