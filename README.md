@@ -4,3 +4,4 @@
 #Run file index.php
 #Want to login, run file login.php (only admin can connect to admin.php)
 #Run index.php
+#Sign in into admin.php to add phim
