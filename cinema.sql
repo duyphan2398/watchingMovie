@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 12, 2019 lúc 06:59 AM
--- Phiên bản máy phục vụ: 10.1.37-MariaDB
--- Phiên bản PHP: 7.1.26
+-- Máy chủ: 127.0.0.1:3325
+-- Thời gian đã tạo: Th5 25, 2020 lúc 05:23 AM
+-- Phiên bản máy phục vụ: 10.4.11-MariaDB
+-- Phiên bản PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,22 +40,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `username_admin`, `password_admin`, `ten_admin`) VALUES
-(1, 'duyphan', 'Duyphan', 'Phan Nhật Duy'),
-(2, 'phannhatduy', 'phannhatduy', 'Phan Duy'),
+(1, '51603079', 'Duyphan', '51603079'),
 (3, 'nhatduy', 'nhatduy', 'Phan Nhật Duy'),
-(4, 'duyphan123', '123456', 'phan duy'),
-(5, 'duyphan123456', '123456', 'duy phan nhat '),
-(6, 'nhatduyphan', '987654', 'Phan Nhat Duy'),
-(7, 'duyphan12', 'zxcvbn', 'duy duy duy '),
-(8, 'duyphan2398', '123456', 'duyduy duy duy'),
-(9, 'duydayne', '123456', 'phan nhat duy '),
-(10, 'duycuccu', '123456', 'duy nhat phan '),
-(11, 'duyduyduyduy', 'qwerty', 'duy phan nhat '),
-(12, 'duyduyphan', 'asdfgh', 'phan'),
-(13, '51603079', '123456', '123456'),
-(14, 'duyeptrai', '123456', 'duy dep trai '),
-(15, 'duydepgai', '123456', 'phanduy'),
-(16, 'duyxinhgai', '123456', 'Phan Nhat Duy');
+(16, 'binhnguyen', '0971059736', 'Nguyễn Tiến Bình'),
+(17, '51603031', '51603031', '51603031');
 
 -- --------------------------------------------------------
 
@@ -177,7 +165,7 @@ ALTER TABLE `theloai`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT cho bảng `phim`
